@@ -1,6 +1,8 @@
 package web.model;
 
 public class User {
+
+    private Long id;
     private String userName;
     private String userStatus;
     private int userAge;
@@ -12,6 +14,14 @@ public class User {
         this.userName = userName;
         this.userStatus = userStatus;
         this.userAge = userAge;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUserName() {
