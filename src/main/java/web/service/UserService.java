@@ -7,4 +7,15 @@ import java.util.List;
 public interface UserService {
 
     List<User> selectUsers(int userQuantity);
+    void addUser(User user); //create
+
+    User getById(Long id); //read
+
+    List<User> selectAllUsersFromDatabase(); //read
+
+    void updateUser(User user); //update
+
+    void deleteById(Long id); //delete
+
+
 }
