@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th>User Name</th>
+        <th>User Status</th>
+        <th>User Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.getUserName()}"></td>
+        <td th:text="${user.getUserStatus()}"></td>
+        <td th:text="${user.getUserAge()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
