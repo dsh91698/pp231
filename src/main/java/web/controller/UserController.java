@@ -17,8 +17,6 @@ public class UserController {
         this.userService = userService;
     }
 
-//    public CarsController() {}
-
     @GetMapping(value = "/users")
     public String printCars(@RequestParam(value = "count", defaultValue = "5") int count, ModelMap model) {
         List<User> usersForShow = userService.selectUsers(count);
