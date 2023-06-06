@@ -31,6 +31,7 @@
 <table>
     <thead>
     <tr>
+        <th>User ID</th>
         <th>User Name</th>
         <th>User Status</th>
         <th>User Age</th>
@@ -40,6 +41,7 @@
     </thead>
     <tbody>
     <tr th:each="user : ${users}">
+        <td th:text="${user.getId()}"></td>
         <td th:text="${user.getUserName()}"></td>
         <td th:text="${user.getUserStatus()}"></td>
         <td th:text="${user.getUserAge()}"></td>

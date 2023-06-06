@@ -7,15 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 @Repository
 public class UserDaoImp implements UserDao{
-
+public static int COUNTER = 0;
     public List<User> userList = new ArrayList<>();
 
     public UserDaoImp() {
-            userList.add(new User("Kevin", "active", 95));
-            userList.add(new User( "Noah", "banned", 85));
-            userList.add(new User("Bobby", "read-only", 75));
-            userList.add(new User( "Caleb", "active", 65));
-            userList.add(new User("John", "registered", 55));
+            userList.add(new User((long) ++COUNTER, "Kevin", "active", 95));
+            userList.add(new User((long) ++COUNTER, "Noah", "banned", 85));
+            userList.add(new User((long) ++COUNTER, "Bobby", "read-only", 75));
+            userList.add(new User((long) ++COUNTER,  "Caleb", "active", 65));
+            userList.add(new User((long) ++COUNTER, "John", "registered", 55));
     }
 
     @Override
