@@ -19,8 +19,7 @@ public class HelloController {
 		List<String> messages = new ArrayList<>();
 		messages.add("Hello!");
 		messages.add("I'm Java pre-project. Задача 2.3.1");
-		messages.add(getToday());
-//		messages.add("Monday 05 Jun 2023");
+		messages.add("Today: " + getToday());
 		model.addAttribute("messages", messages);
 		return "index";
 	}
