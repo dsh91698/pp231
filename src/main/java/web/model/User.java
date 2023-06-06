@@ -16,6 +16,13 @@ public class User {
         this.userAge = userAge;
     }
 
+    public User(Long id, String userName, String userStatus, int userAge) {
+        this.id = id;
+        this.userName = userName;
+        this.userStatus = userStatus;
+        this.userAge = userAge;
+    }
+
     public Long getId() {
         return id;
     }
