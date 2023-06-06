@@ -7,10 +7,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
 
     private UserDao userDao;
+
     @Autowired
     public UserServiceImpl(UserDao userDao) {
         this.userDao = userDao;
@@ -19,24 +21,24 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> selectUsers(int carQuantity) {
-        carQuantity = carQuantity >= 5 ? userDao.selectAllUsersFromDatabase().size()  : carQuantity;
+        carQuantity = carQuantity >= 5 ? userDao.selectAllUsersFromDatabase().size() : carQuantity;
         List<User> usersForShow = userDao.selectAllUsersFromDatabase().subList(0, carQuantity);
         return usersForShow;
     }
 
     @Override
     public void addUser(User user) {
-
+        userDao.addUser(user);
     }
 
     @Override
     public User getById(Long id) {
-        return null;
+        return userDao.getById(id);
     }
 
     @Override
     public List<User> selectAllUsersFromDatabase() {
-        return null;
+        return userDao.selectAllUsersFromDatabase();
     }
 
     @Override
