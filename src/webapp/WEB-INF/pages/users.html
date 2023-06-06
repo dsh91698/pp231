@@ -2,6 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <style>
+        .button-edit {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: darkblue;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .button-delete {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: darkred;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
     <title>Users</title>
 </head>
 <body>
@@ -12,6 +34,8 @@
         <th>User Name</th>
         <th>User Status</th>
         <th>User Age</th>
+        <th>Edit User</th>
+        <th>Delete User</th>
     </tr>
     </thead>
     <tbody>
@@ -19,6 +43,8 @@
         <td th:text="${user.getUserName()}"></td>
         <td th:text="${user.getUserStatus()}"></td>
         <td th:text="${user.getUserAge()}"></td>
+        <td><a th:href="@{users}" class="button-edit">Edit</a></td>
+        <td><a th:href="@{users}" class="button-delete">Delete</a></td>
     </tr>
     </tbody>
 </table>
