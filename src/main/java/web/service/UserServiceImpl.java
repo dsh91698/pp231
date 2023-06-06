@@ -5,7 +5,6 @@ import web.dao.UserDao;
 import web.model.User;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -42,12 +41,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void updateUser(User user) {
-
+    public void updateUser(User user, Long id) {
+        userDao.updateUser(user, id);
     }
 
     @Override
     public void deleteById(Long id) {
-
+        userDao.deleteById(id);
     }
 }

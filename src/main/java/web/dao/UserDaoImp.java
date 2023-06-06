@@ -21,7 +21,7 @@ public class UserDaoImp implements UserDao {
 
     @Override
     public void addUser(User user) {
-        user.setId( (long) ++COUNTER);
+        user.setId((long) ++COUNTER);
         userList.add(user);
 
 
@@ -42,12 +42,15 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
-    public void updateUser(User user) {
-
+    public void updateUser(User userUpdated, Long id) {
+        User user = getById(id);
+        user.setUserName(userUpdated.getUserName());
+        user.setUserAge(userUpdated.getUserAge());
+        user.setUserStatus(userUpdated.getUserStatus());
     }
 
     @Override
     public void deleteById(Long id) {
-
+        userList.removeIf(user -> user.getId() == id);
     }
 }

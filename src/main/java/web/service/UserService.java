@@ -13,7 +13,7 @@ public interface UserService {
 
     List<User> selectAllUsersFromDatabase(); //read
 
-    void updateUser(User user); //update
+    void updateUser(User user, Long id); //update
 
     void deleteById(Long id); //delete
 
