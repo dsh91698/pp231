@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import web.model.User;
+import web.service.UserService;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -12,6 +14,13 @@ import java.util.List;
 
 @Controller
 public class HelloController {
+	private UserService userService;
+
+	public HelloController(UserService userService) {
+		this.userService = userService;
+		userService.addUser(new User("Aaa","active",25));
+	}
+
 
 	@GetMapping(value = "/")
 	public String printWelcome(ModelMap model) {

@@ -15,7 +15,9 @@ public class UserController {
 
     public UserController(UserService userService) {
         this.userService = userService;
+        userService.addUser(new User("Aaa","active",25));
     }
+
 
     @GetMapping(value = "")
     public String showAllUsers(ModelMap model) {
