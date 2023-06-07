@@ -22,7 +22,7 @@ import java.util.Properties;
 @Configuration
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
-@ComponentScan({"web", "web.model"})
+@ComponentScan({"web"})
 public class DbConfig {
    private Environment env;
 

@@ -8,7 +8,6 @@ import web.model.User;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import java.util.ArrayList;
 import java.util.List;
 
 //@Transactional
@@ -31,13 +30,7 @@ public class UserDaoImp implements UserDao {
 
     @Override
     public User getById(Long id) {
-        User user = entityManager.find(User.class, id);
-        return user;
-//        TypedQuery<User> query = entityManager.createQuery(
-//                "SELECT user FROM User user WHERE user.id = :id", User.class);
-//        query.setParameter("id", id);
-//        System.out.println("getById; " + query.getResultList().get(0));
-//        return query.getResultList().get(0);
+        return entityManager.find(User.class, id);
     }
 
 
@@ -46,6 +39,7 @@ public class UserDaoImp implements UserDao {
         TypedQuery<User> query = entityManager.createQuery("FROM User", User.class);
         return query.getResultList();
     }
+
     @Transactional
     @Override
     public void updateUser(User userUpdated, Long id) {
@@ -54,10 +48,11 @@ public class UserDaoImp implements UserDao {
         user.setUserAge(userUpdated.getUserAge());
         user.setUserStatus(userUpdated.getUserStatus());
     }
+
     @Transactional
     @Override
     public void deleteById(Long id) {
-        User user = entityManager.find(User.class, id);
+        User user = getById(id);
         if (user != null) {
             entityManager.remove(user);
         }
