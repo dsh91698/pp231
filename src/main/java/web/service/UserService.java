@@ -5,8 +5,6 @@ import web.model.User;
 import java.util.List;
 
 public interface UserService {
-
-    List<User> selectUsers(int userQuantity);
     void addUser(User user); //create
 
     User getById(Long id); //read
