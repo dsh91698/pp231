@@ -1,5 +1,6 @@
 package web.dao;
 
+import org.springframework.transaction.annotation.Transactional;
 import web.model.User;
 
 import java.util.List;
@@ -13,7 +14,8 @@ public interface UserDao {
 
     List<User> selectAllUsersFromDatabase(); //read
 
-    void updateUser(User user, Long id); //update
+    void updateUser(User user); //update
+
 
     void deleteById(Long id); //delete
 }
